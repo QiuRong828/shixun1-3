@@ -3,12 +3,17 @@ import { setItem, getItem } from '../../utils/storage'
 export default {
   namespaced: true,
   state: () => ({
-    token: getItem('token') || ''
+    token: getItem('token') || '',
+    permissionList: getItem('manager') || {}
   }),
   mutations: {
     setToken(state, token) {
       state.token = token
       setItem('token', token)
+    },
+    setPermissionList(state, permissionList) {
+      state.permissionList = permissionList
+      setItem('manager', permissionList)
     }
   },
   actions: {
@@ -21,6 +26,12 @@ export default {
       } catch (error) {
         console.log(error)
       }
+    },
+    async getPermissionlist({ commit }) {
+      const response = await UserApi.getPermissionList()
+      commit('setPermissionList', response)
+      console.log('permission', response)
+      return response
     }
   }
 }

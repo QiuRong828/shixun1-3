@@ -12,7 +12,7 @@ const login = (data) => {
 // 权限列表接口
 const getPermissionList = () => {
   return request({
-    url: '/getPermissionList',
+    url: 'users/getPermissionList',
     method: 'GET'
   })
 }

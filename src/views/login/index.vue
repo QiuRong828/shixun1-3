@@ -45,6 +45,7 @@ const handleLoginSubmit = () => {
   LoginForm.value.validate(async (valid) => {
     if (!valid) return
     await store.dispatch('user/login', loginForm)
+    store.dispatch('user/getPermissionlist')
     router.push('/')
   })
 }

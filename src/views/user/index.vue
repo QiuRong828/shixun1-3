@@ -1,5 +1,5 @@
 <template>
-  <div>欢迎体验 慕课通用后台管理系统</div>
+  <div>用户管理</div>
 </template>
 <script setup></script>
 <style lang="scss" scoped></style>
