@@ -1,9 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import User from './modules/User'
-import Roles from './modules/Roles'
+
 import Menu from './modules/Menu'
 import Leave from './modules/Leave'
-import Approve from './modules/Approve'
 
 export const publicRoutes = [
   {
@@ -30,7 +28,7 @@ export const publicRoutes = [
   }
 ]
 
-export const privateRoutes = [User, Roles, Menu, Leave, Approve]
+export const privateRoutes = [Menu, Leave]
 
 const router = createRouter({
   history: createWebHashHistory(),

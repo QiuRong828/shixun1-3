@@ -1,10 +1,19 @@
 <template>
   <el-menu
     active-text-color="#ffd04b"
-    background-color="#545c64"
+    background-color="#001529"
     default-active="/index"
     text-color="#fff"
+    router
   >
+    <div class="box">
+      <img
+        src="http://manager.9yuecloud.com/img/logo.384b81fb.png"
+        alt=""
+        class="image"
+      />
+      <span>Manager </span>
+    </div>
     <MenuTree v-for="item in menuList" :menu="item" :key="item"></MenuTree>
   </el-menu>
 </template>
@@ -23,4 +32,16 @@ const menuList = computed(() => {
 
 console.log(menuList, 'menulist')
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.box {
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  color: white;
+  .image {
+    margin: 10px 20px;
+    width: 32px;
+    height: 32px;
+  }
+}
+</style>

@@ -60,8 +60,7 @@ export const generateMenus = (routes) => {
     if (!route) {
       route = {
         ...item,
-        path: routePath,
-        children: []
+        path: routePath
       }
 
       if (item.meta.title && item.meta.icon) {

@@ -15,6 +15,13 @@ export default {
       meta: {
         title: '休假申请'
       }
+    },
+    {
+      path: '/audit/approve',
+      component: () => import('../../views/approve'),
+      meta: {
+        title: '待审批'
+      }
     }
   ]
 }

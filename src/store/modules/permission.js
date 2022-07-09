@@ -16,6 +16,7 @@ export default {
       const routes = []
       menus.forEach((name) => {
         const data = privateRoutes.filter((item) => item.name === name)
+        console.log(data, 0)
 
         routes.push(...data)
       })

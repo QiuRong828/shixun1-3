@@ -15,6 +15,20 @@ export default {
       meta: {
         title: '菜单管理'
       }
+    },
+    {
+      path: '/system/role',
+      component: () => import('../../views/roles'),
+      meta: {
+        title: '角色管理'
+      }
+    },
+    {
+      path: '/system/user',
+      component: () => import('../../views/user'),
+      meta: {
+        title: '用户管理'
+      }
     }
   ]
 }

@@ -1,5 +1,5 @@
 import UserApi from '../../api/user'
-import { setItem, getItem } from '../../utils/storage'
+import { setItem, getItem, removeItem } from '../../utils/storage'
 export default {
   namespaced: true,
   state: () => ({
@@ -32,6 +32,11 @@ export default {
       commit('setPermissionList', response)
       console.log('permission', response)
       return response
+    },
+    logout({ commit }) {
+      commit('setToken', '')
+      commit('setPermissionList', '')
+      removeItem('token')
     }
   }
 }

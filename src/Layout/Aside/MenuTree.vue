@@ -1,5 +1,10 @@
 <template>
-  <div>
+  <template v-if="!item.children">
+    <el-menu-item :index="item.path">
+      <span>{{ item.meta.title }}</span>
+    </el-menu-item>
+  </template>
+  <template v-if="item.children && item.children.length > 0">
     <el-sub-menu :index="item.path">
       <template #title>
         <el-icon><setting /></el-icon>
@@ -11,8 +16,9 @@
         :key="child"
       ></MenuTree>
     </el-sub-menu>
-  </div>
+  </template>
 </template>
+
 <script setup>
 import { defineProps, computed } from 'vue'
 
