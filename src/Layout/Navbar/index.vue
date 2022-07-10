@@ -9,14 +9,16 @@
     <div class="navbar-right">
       <el-dropdown>
         <span class="el-dropdown-link">
-          admin
+          {{ $store.getters.userInfo.userName }}
           <el-icon class="el-icon--right">
             <arrow-down />
           </el-icon>
         </span>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item>邮箱</el-dropdown-item>
+            <el-dropdown-item>{{
+              $store.getters.userInfo.userEmail
+            }}</el-dropdown-item>
             <el-dropdown-item @click="logout">退出登录</el-dropdown-item>
           </el-dropdown-menu>
         </template>
@@ -37,7 +39,6 @@ const store = useStore()
 //   return route.matched.filter((item) => item.meta.title)
 // })
 // console.log(breadcrumbdata, '面包屑')
-
 const logout = async () => {
   await store.dispatch('user/logout')
   router.push('/login')

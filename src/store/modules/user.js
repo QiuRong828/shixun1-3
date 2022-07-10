@@ -4,7 +4,8 @@ export default {
   namespaced: true,
   state: () => ({
     token: getItem('token') || '',
-    permissionList: getItem('manager') || {}
+    permissionList: getItem('manager') || {},
+    userInfo: getItem('userInfo') || {}
   }),
   mutations: {
     setToken(state, token) {
@@ -14,6 +15,10 @@ export default {
     setPermissionList(state, permissionList) {
       state.permissionList = permissionList
       setItem('manager', permissionList)
+    },
+    setuserInfo(state, userInfo) {
+      state.userInfo = userInfo
+      setItem('userInfo', userInfo)
     }
   },
   actions: {
@@ -22,6 +27,7 @@ export default {
         const response = await UserApi.login(payload)
         console.log(response, '123')
         commit('setToken', response.token)
+        commit('setuserInfo', response)
         return response
       } catch (error) {
         console.log(error)

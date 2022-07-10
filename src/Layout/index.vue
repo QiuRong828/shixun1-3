@@ -2,10 +2,7 @@
   <div class="app-wrapper">
     <AppAside class="sidebar-container"></AppAside>
     <div class="main-container">
-      <div>
-        <AppHeader class="head"></AppHeader>
-        <!-- <tags-view></tags-view> -->
-      </div>
+      <AppHeader class="head"></AppHeader>
       <AppMain class="main"></AppMain>
     </div>
   </div>
@@ -18,10 +15,9 @@ import AppHeader from './Navbar'
 </script>
 <style scoped lang="scss">
 .app-wrapper {
-  position: relative;
   width: 100%;
   height: 100%;
-
+  display: flex;
   .sidebar-container {
     width: 210px;
     height: 100%;
@@ -32,10 +28,16 @@ import AppHeader from './Navbar'
     top: 0;
     bottom: 0;
     -ms-overflow-style: none; /* IE 10+ */
-    scrollbar-width: none; /* Firefox */
+    // scrollbar-width: none; /* Firefox */
   }
 
   .main-container {
+    width: 100%;
+    height: 100%;
+    margin-left: 210px;
+    // position: fixed;
+    // top: 50px;
+    // right: 0;
     .head {
       height: 50px;
       background-color: #fff;
@@ -46,14 +48,19 @@ import AppHeader from './Navbar'
       justify-content: space-between;
       position: fixed;
       right: 0;
-      z-index: 9999;
+      top: 0;
+      bottom: 5px;
+      // z-index: 9999;
       left: 210px;
     }
     .main {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: calc(100vh - 50px);
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+      // height: calc(100vh - 50px);
+      z-index: 99;
+      margin-top: 70px;
+      height: 100%;
     }
   }
 }
